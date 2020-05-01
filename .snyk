@@ -1,9 +1,29 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.12.0
+version: v1.14.1
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:debug:20170905':
     - primus > setheader > debug:
         reason: Not vulnerable as `primus` doesn't run in debug mode
         expires: '2019-10-10T18:14:53.642Z'
-patch: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - eslint > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - node-cache > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - snyk-config > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - eslint > inquirer > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - eslint > table > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/traverse > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/traverse > @babel/generator > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-split-export-declaration > @babel/types > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
+    - tap > nyc > istanbul-lib-instrument > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash:
+        patched: '2020-05-01T05:35:46.533Z'
